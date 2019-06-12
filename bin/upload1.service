@@ -1,0 +1,19 @@
+[Unit]
+Description=Upload 9310 Base raw Data to Caster
+Requires=network-online.target
+After=network.target network-online.target multi-user.target
+
+
+[Service]
+Type=simple
+User=root
+EnvironmentFile=/etc/default/str2str
+
+ExecStart=/usr/local/bin/str2str $BASE_OPTS
+Restart=on-failure
+RestartSec=15
+KillMode=process
+
+
+[Install]
+WantedBy=multi-user.target
