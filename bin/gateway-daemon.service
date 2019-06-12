@@ -1,5 +1,5 @@
 [Unit]
-Description=Upload 9310 Base raw Data to Caster
+Description=transmit serial port to tcpserver 62001
 Requires=network-online.target
 After=network.target network-online.target multi-user.target
 
@@ -7,9 +7,9 @@ After=network.target network-online.target multi-user.target
 [Service]
 Type=simple
 User=root
-EnvironmentFile=/etc/default/str2str
+EnvironmentFile=/etc/default/gateway
 
-ExecStart=/usr/local/bin/str2str $BASE_OPTS
+ExecStart=/usr/local/bin/str2str $GW_OPTS
 Restart=on-failure
 RestartSec=15
 KillMode=process
