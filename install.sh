@@ -16,14 +16,14 @@ if [ -f $OPT_FILE ]
 then
   echo "$OPT_FILE exists."
 else
-  cp bin/gateway /etc/default/
+  cp bin/etc_default/gateway /etc/default/
 fi
 
 if [ -f $DAEMON_FILE ]
 then
   echo "$DAEMON_FILE exists."
 else
-  cp bin/gateway-daemon.service /etc/systemd/system/
+  cp bin/etc_systemd_system/gateway-daemon.service /etc/systemd/system/
   systemctl daemon-reload
   systemctl enable gateway-daemon.service
   systemctl start gateway-daemon.service
