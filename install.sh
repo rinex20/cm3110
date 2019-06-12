@@ -1,4 +1,4 @@
-!#/bin/sh
+#!/bin/sh
 
 STR2STR_PATH=/usr/local/bin/str2str
 OPT_FILE=/etc/default/gateway
